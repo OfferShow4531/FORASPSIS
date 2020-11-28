@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace SISWORK.Models
 {
     public class AbstractionClass
-    {/*
+    {
        interface IEat{ //Интерфейс с методом и свойством
             const int stuff=0;
             static int dayEat = 0;
@@ -15,7 +15,7 @@ namespace SISWORK.Models
             }
             string StuffName {get;set;}
             delegate void EatHandler(string acception);
-            even EatHandler EatIm;
+            
         }
   
         abstract class Animals //Абстрактный класс
@@ -29,10 +29,8 @@ namespace SISWORK.Models
 
             }
 
-            public void Display()
-            {
-                Console.WriteLine(Name);
-            }
+            public abstract void Display();
+            
         }
         class Elephant : Animals
         {
@@ -79,9 +77,9 @@ namespace SISWORK.Models
         }
         Elephant anim = new Elephant("Jourge", 2000);
         Kangaroo anum = new Kangaroo("Troy", 5);
-        Mouse mise = new Mouse("Jerry", 29.99);
-        anim.Display();
-        anum.Display();
-        mise.Display();*/
+        Mouse mise = new Mouse("Jerry", 29);
+        
+        
+       
     }
     }
