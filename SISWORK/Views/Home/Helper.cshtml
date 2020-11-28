@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Helpers";
+}
+<input type="text" name="firstname" id="firstname" value="" />
+<div class="first">
+@Html.TextBox("firstname", "John",
+    new
+    {
+        style = "background-color:Red; color: black; font-weight:bold",
+        title = "Enter your name"
+    })
+</div>
+<div class="second">
+    @Html.TextBox("firstname", "First name")
+@Html.Label("firstname", "Password")
+@Html.Password("Password")
+</div>
+<div class="third">
+    @Html.TextBox("firstname", "First name")
+    @Html.TextArea("Comments","",5,20,null)
+</div>
