@@ -4,8 +4,17 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<h1>ПРОСМОТР НОМЕРА</h1>
+<style>
+    body {
+        background-image: url('FlyTown.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+      
+    }
+</style>
 <div>
     <h4>ShopModel</h4>
     <hr />
@@ -35,8 +44,4 @@
             @Html.DisplayFor(model => model.Come)
         </dd>
     </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
 </div>

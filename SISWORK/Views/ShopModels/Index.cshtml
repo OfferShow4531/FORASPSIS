@@ -1,13 +1,25 @@
 ﻿@model IEnumerable<SISWORK.Models.ShopModel>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+<h1>САЙТ ПОЛНОГО КОНТРОЛЯ НОМЕРАМИ</h1>
+<style>
+    body {
+        background-image: url('FlyTown.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+        font-size: 15px;
+    }
+</style>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">ОТКРЫТЬ НОВЫЙ НОМЕР</a>
 </p>
 <table class="table">
     <thead>
@@ -28,26 +40,34 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.type)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Come)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Come)
+                </td>
+                <td>
+                    @if (SignInManager.IsSignedIn(User))
+                    { //true
+                        <a asp-action="Edit" asp-route-id="@item.id">ИЗМЕНИТЬ</a>
+                        <a asp-action="Details" asp-route-id="@item.id"> ПРОСМОТРЕТЬ </a>
+
+                        <a asp-action="Delete" asp - route - id="@item.id"> УДАЛИТЬ </a>
+                    }
+                    else {
+                    <a asp-action="Details" asp-route-id="@item.id"> ПРОСМОТРЕТЬ </a>
+                    }
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
