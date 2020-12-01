@@ -29,11 +29,11 @@ a {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 12px;
+  font-size: 20px;
 }
 @media (min-width: 768px) {
   html {
-    font-size: 12px;
+    font-size: 20px;
   }
 }
 
@@ -78,7 +78,7 @@ body {
 
 .area {
     text-align: center;
-    font-size: 10px;
+    font-size: 120px;
     color: #7B96B8; 
     letter-spacing: -7px;
     font-weight: 700;
